@@ -1,0 +1,147 @@
+<div class="container mt-4">
+
+  <div class="card shadow-sm">
+
+    <div class="card-body">
+
+      <h2 class="mb-4">
+
+        @if (isEditMode()) {
+          Editar Post
+        }
+
+        @else {
+          Crear Post
+        }
+
+      </h2>
+
+      <form
+        [formGroup]="form"
+        (ngSubmit)="submit()"
+      >
+
+        <!-- TITLE -->
+
+        <div class="mb-3">
+
+          <label class="form-label">
+            Título
+          </label>
+
+          <input
+            type="text"
+            class="form-control"
+            formControlName="title"
+          />
+
+          @if (
+            form.controls.title.touched &&
+            form.controls.title.invalid
+          ) {
+
+            <small
+              class="text-danger"
+            >
+
+              El título debe tener
+              mínimo 3 caracteres.
+
+            </small>
+
+          }
+
+        </div>
+
+        <!-- BODY -->
+
+        <div class="mb-3">
+
+          <label class="form-label">
+            Contenido
+          </label>
+
+          <textarea
+            rows="5"
+            class="form-control"
+            formControlName="body"
+          ></textarea>
+
+          @if (
+            form.controls.body.touched &&
+            form.controls.body.invalid
+          ) {
+
+            <small
+              class="text-danger"
+            >
+
+              El contenido debe tener
+              mínimo 10 caracteres.
+
+            </small>
+
+          }
+
+        </div>
+
+        <!-- AUTHOR -->
+
+        <div class="mb-4">
+
+          <label class="form-label">
+            Autor
+          </label>
+
+          <input
+            type="text"
+            class="form-control"
+            formControlName="author"
+          />
+
+          @if (
+            form.controls.author.touched &&
+            form.controls.author.invalid
+          ) {
+
+            <small
+              class="text-danger"
+            >
+              El autor es requerido.
+            </small>
+
+          }
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button
+          class="btn btn-primary"
+          
+          [disabled]="
+            form.invalid ||
+            loading()"
+        >
+
+          @if (loading()) {
+            Guardando...
+          }
+
+          @else if (isEditMode()) {
+            Actualizar
+          }
+
+          @else {
+            Crear
+          }
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>

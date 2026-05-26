@@ -1,0 +1,16 @@
+body {
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8fbff,
+      #eef3ff
+    );
+
+  font-family:
+    Inter,
+    system-ui,
+    sans-serif;
+
+  color: #1e293b;
+}

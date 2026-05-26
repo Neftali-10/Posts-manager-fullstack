@@ -1,0 +1,152 @@
+<div class="container mt-4">
+
+  @if (loading()) {
+
+    <p>Cargando...</p>
+
+  }
+
+  @else if (post()) {
+
+    <div class="card shadow-sm mb-4">
+
+      <div class="card-body">
+
+        <h2>
+          {{ post().title }}
+        </h2>
+
+        <p>
+          {{ post().body }}
+        </p>
+
+        <small class="text-muted">
+          Autor:
+          {{ post().author }}
+        </small>
+
+      </div>
+
+    </div>
+
+    <h4 class="mb-3">
+      Comentarios
+    </h4>
+
+    <div class="card shadow-sm mb-4">
+
+  <div class="card-body">
+
+    <h5 class="mb-3">
+      Agregar comentario
+    </h5>
+
+    <div class="mb-3">
+
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Nombre"
+        [ngModel]="commentName()"
+        (ngModelChange)="
+          commentName.set($event)
+        "
+      />
+
+    </div>
+
+    <div class="mb-3">
+
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Email"
+        [ngModel]="commentEmail()"
+        (ngModelChange)="
+          commentEmail.set($event)
+        "
+      />
+
+    </div>
+
+    <div class="mb-3">
+
+      <textarea
+        class="form-control"
+        rows="3"
+        placeholder="Comentario"
+        [ngModel]="commentBody()"
+        (ngModelChange)="
+          commentBody.set($event)
+        "
+      ></textarea>
+
+    </div>
+
+    <button
+        class="btn btn-primary"
+
+        [disabled]="
+        !commentName() ||
+        !commentEmail() ||
+        !commentBody()"
+
+        (click)="createComment()"
+    >
+        Comentar
+    </button>
+
+    <small class="text-muted d-block mt-2">
+        Todos los campos son requeridos.
+    </small>
+
+  </div>
+
+</div>
+
+    @if (comments().length === 0) {
+
+      <div class="alert alert-info">
+        No hay comentarios.
+      </div>
+
+    }
+
+    @else {
+
+      @for (
+        comment of comments();
+        track comment._id
+      ) {
+
+        <div
+          class="card mb-3 shadow-sm"
+        >
+
+          <div class="card-body">
+
+            <h6>
+              {{ comment.name }}
+            </h6>
+
+            <small
+              class="text-muted"
+            >
+              {{ comment.email }}
+            </small>
+
+            <p class="mt-2">
+              {{ comment.body }}
+            </p>
+
+          </div>
+
+        </div>
+
+      }
+
+    }
+
+  }
+
+</div>

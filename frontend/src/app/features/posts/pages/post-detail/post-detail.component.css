@@ -1,0 +1,28 @@
+.card {
+
+  border: none;
+
+  border-radius: 16px;
+
+  overflow: hidden;
+}
+
+.card-body {
+
+  padding: 1.5rem;
+}
+
+textarea.form-control {
+
+  border-radius: 12px;
+}
+
+input.form-control {
+
+  border-radius: 12px;
+}
+
+.btn {
+
+  border-radius: 12px;
+}

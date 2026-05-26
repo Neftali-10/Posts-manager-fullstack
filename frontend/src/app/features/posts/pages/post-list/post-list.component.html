@@ -1,0 +1,257 @@
+<div class="container mt-5">
+
+  <!-- HEADER -->
+
+  <div
+    class="d-flex justify-content-between align-items-center mb-4"
+  >
+
+    <div>
+
+      <h1 class="fw-bold mb-1">
+        🚀 Posts
+      </h1>
+
+      <p class="text-muted mb-0">
+        Gestiona tus publicaciones
+      </p>
+
+    </div>
+
+    <a
+      class="btn btn-gradient px-4 py-2 shadow-sm"
+
+      routerLink="/posts/create"
+    >
+
+      <i class="bi bi-plus-lg me-2"></i>
+
+      Nuevo Post
+
+    </a>
+
+  </div>
+
+  <!-- SEARCH -->
+
+  <div class="mb-5">
+
+    <input
+      type="text"
+
+      class="form-control form-control-lg custom-search shadow-sm"
+
+      placeholder="🔎 Buscar post..."
+
+      [ngModel]="store.search()"
+
+      (ngModelChange)="
+        store.search.set($event)
+      "
+    />
+
+  </div>
+
+  <!-- LOADING -->
+
+  @if (store.loading()) {
+
+    <div
+      class="text-center py-5"
+    >
+
+      <div
+        class="spinner-border text-primary mb-3"
+      ></div>
+
+      <p class="text-muted">
+        Cargando posts...
+      </p>
+
+    </div>
+
+  }
+
+  <!-- EMPTY STATE -->
+
+  @else if (
+    store.filteredPosts().length === 0
+  ) {
+
+    <div
+      class="card shadow-sm border-0"
+    >
+
+      <div
+        class="card-body text-center py-5"
+      >
+
+        <h3 class="mb-3">
+          😢
+        </h3>
+
+        <h5>
+          No hay posts disponibles
+        </h5>
+
+        <p class="text-muted">
+          Crea tu primer post.
+        </p>
+
+      </div>
+
+    </div>
+
+  }
+
+  <!-- POSTS -->
+
+  @else {
+
+    <div class="row">
+
+      @for (
+        post of store.filteredPosts();
+        track post._id
+      ) {
+
+        <div
+          class="col-lg-6 col-md-6 mb-4"
+        >
+
+          <div
+            class="card post-card shadow-sm h-100"
+          >
+
+            <div class="card-body">
+
+              <!-- TITLE -->
+
+              <div
+                class="d-flex justify-content-between align-items-start mb-3"
+              >
+
+                <h4
+                  class="card-title fw-bold"
+                >
+                  {{ post.title }}
+                </h4>
+
+              </div>
+
+              <!-- BODY -->
+
+              <p
+                class="card-text text-muted"
+              >
+                {{ post.body }}
+              </p>
+
+              <!-- AUTHOR -->
+
+              <div
+                class="mb-4 mt-4"
+              >
+
+                <small
+                  class="text-muted"
+                >
+                  <div class="mt-2">
+
+                    <small class="text-secondary">
+
+                      <i class="bi bi-calendar-event me-1"></i>
+
+                      {{
+                        post.createdAt
+                          | date:'medium'
+                      }}
+
+                    </small>
+
+                  </div>
+
+                  <i
+                    class="bi bi-person-circle me-1"
+                  ></i>
+
+                  {{ post.author }}
+                  
+                  
+                </small>
+
+              </div>
+
+              <!-- ACTIONS -->
+
+              <div
+                class="d-flex gap-2"
+              >
+
+                <!-- VIEW -->
+
+                <a
+                  class="btn btn-sm btn-outline-primary"
+
+                  [routerLink]="[
+                    '/posts',
+                    post._id
+                  ]"
+                >
+
+                  <i
+                    class="bi bi-eye"
+                  ></i>
+
+                </a>
+
+                <!-- EDIT -->
+
+                <a
+                  class="btn btn-sm btn-outline-warning"
+
+                  [routerLink]="[
+                    '/posts/edit',
+                    post._id
+                  ]"
+                >
+
+                  <i
+                    class="bi bi-pencil"
+                  ></i>
+
+                </a>
+
+                <!-- DELETE -->
+
+                <button
+                  class="btn btn-sm btn-outline-danger"
+
+                  (click)="
+                    store.deletePost(
+                      post._id
+                    )
+                  "
+                >
+
+                  <i
+                    class="bi bi-trash"
+                  ></i>
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  }
+
+</div>

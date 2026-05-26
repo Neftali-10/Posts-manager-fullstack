@@ -1,0 +1,119 @@
+.post-card {
+
+  border: 1px solid #e8ecf3;
+
+  border-radius: 20px;
+
+  background: white;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  overflow: hidden;
+
+  min-height: 100px;
+}
+
+.post-card:hover {
+
+  transform: translateY(-6px);
+
+  border-color: #000000;
+
+  box-shadow:
+    0 10px 20px rgba(
+      13,
+      110,
+      253,
+      0.12
+    );
+}
+
+.card-body {
+
+  padding: 2rem;
+}
+
+.card-title {
+
+  font-weight: 800;
+
+  color: #1e293b;
+
+  margin-bottom: 1rem;
+}
+
+.card-text {
+
+  color: #64748b;
+
+  line-height: 1.7;
+
+  display: -webkit-box;
+
+  line-clamp: 3;
+
+  -webkit-line-clamp: 3;
+
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+}
+
+.btn {
+
+  border-radius: 12px;
+
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+
+  transform: scale(1.05);
+}
+.custom-search {
+
+  border-radius: 18px;
+
+  border: 1px solid #dbe4ff;
+
+  padding: 1rem 1.25rem;
+
+  background: white;
+}
+.btn-gradient {
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #7c3aed
+    );
+
+  border: none;
+
+  color: white;
+
+  border-radius: 14px;
+
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+}
+
+.btn-gradient:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 25px rgba(
+      37,
+      99,
+      235,
+      0.25
+    );
+
+  color: white;
+}

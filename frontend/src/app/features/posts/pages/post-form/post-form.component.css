@@ -1,0 +1,27 @@
+.card {
+
+  border: none;
+
+  border-radius: 18px;
+}
+
+.form-control {
+
+  border-radius: 12px;
+
+  padding: 0.85rem;
+}
+
+textarea.form-control {
+
+  min-height: 180px;
+}
+
+.btn-primary {
+
+  border-radius: 12px;
+
+  padding: 0.8rem 1.5rem;
+
+  font-weight: 600;
+}
