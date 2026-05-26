@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "0b98d94b-2432-4076-ad86-6cd2ee316240",
+    "name": "Posts Manager API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53933197",
+    "_collection_link": "https://go.postman.co/collection/53933197-0b98d94b-2432-4076-ad86-6cd2ee316240?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Posts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/posts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Nuevo Post\",\r\n  \"body\": \"Contenido del post\",\r\n  \"author\": \"Alexander\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Post",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"Post Actualizado\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts/ID",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts",
+            "ID"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Post",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/posts/ID",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts",
+            "ID"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Bulk Upload",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n  {\r\n    \"title\": \"Post 1\",\r\n    \"body\": \"Contenido del post 1\",\r\n    \"author\": \"Juan\"\r\n  },\r\n  {\r\n    \"title\": \"Post 2\",\r\n    \"body\": \"Contenido del post 2\",\r\n    \"author\": \"Maria\"\r\n  }\r\n]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/posts/bulk",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "posts",
+            "bulk"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Comment",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/comments?postId=ID",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "comments"
+          ],
+          "query": [
+            {
+              "key": "postId",
+              "value": "ID"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Comment",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"postId\": \"ID\",\r\n  \"name\": \"Juan\",\r\n  \"email\": \"juan@test.com\",\r\n  \"body\": \"Buen post!\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/comments",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "comments"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Comment",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/comments/ID",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "comments",
+            "ID"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
