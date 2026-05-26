@@ -1,27 +1,105 @@
-# Frontend
+# 🚀 Posts Manager Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+Aplicación frontend desarrollada con Angular 18 para la gestión de posts y comentarios.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# 🛠️ Tecnologías
 
-## Code scaffolding
+* Angular 18
+* TypeScript
+* Angular Signals
+* RxJS
+* Reactive Forms
+* Bootstrap 5
+* Bootstrap Icons
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+# 📦 Funcionalidades
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Listado de posts
+* Crear posts
+* Editar posts
+* Eliminar posts
+* Vista detalle del post
+* Comentarios dinámicos
+* Búsqueda en tiempo real
+* Angular Signals
+* RxJS
+* Loading states
+* Manejo global de errores
+* UI responsive y moderna
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# ⚙️ Instalación
 
-## Running end-to-end tests
+## Instalar dependencias
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash id="jlwm306"
+npm install
+```
 
-## Further help
+## Ejecutar frontend
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```bash id="jlwm307"
+ng serve
+```
+
+El frontend correrá en:
+
+```bash id="jlwm308"
+http://localhost:4200
+```
+
+---
+
+# 🔌 Backend requerido
+
+El frontend consume la API backend desarrollada con NestJS.
+
+Asegúrate de tener el backend ejecutándose en:
+
+```bash id="’wini09"
+http://localhost:3000
+```
+
+---
+
+# 🎨 Características UI/UX
+
+* Diseño moderno con Bootstrap
+* Navbar responsiva
+* Cards animadas
+* Estados de carga
+* Empty states
+* Formularios reactivos
+* Iconografía moderna
+* Confirmación de eliminación
+
+---
+
+# 📂 Estructura Principal
+
+```bash id="’wini10"
+src/app/
+├── core/
+├── shared/
+├── features/
+│   └── posts/
+```
+
+---
+
+# 📦 Funcionalidades implementadas
+
+* CRUD completo de Posts
+* CRUD de Comentarios
+* Formularios reactivos
+* Angular Signals
+* RxJS
+* Error Interceptor
+* Search Filter
+* Detail Page
+* Create/Edit Forms
